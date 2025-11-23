@@ -13,11 +13,21 @@
 
             <div class="logo-image">
                  <a href="index.html">
+                 <!-- ※画像パスなどは現状のままでOKです -->
                  <img src="image/logo.png" alt="ラパン学習教室幼児教室" width="200" height="50">
                 </a>
             </div>
 
             <nav id="nav-menu">
+                
+                <!-- ↓↓↓ ★ここに追加します★ ↓↓↓ -->
+                <div class="nav-logo-sp">
+                    <a href="index.html">
+                        <img src="image/logo.png" alt="ラパン学習教室幼児教室" width="200" height="50">
+                    </a>
+                </div>
+                <!-- ↑↑↑ 追加ここまで ↑↑↑ -->
+
                 <ul>
                     <li><a href="index.html">ホーム</a></li>
                     <li><a href="course.html">クラス紹介</a></li>
@@ -25,10 +35,12 @@
                     <li><a href="contact.html" class="btn-contact">お問い合わせ</a></li>
                 </ul>
             </nav>
+            
             <!-- スマホ用ハンバーガーボタン -->
             <div class="hamburger" onclick="this.classList.toggle('active'); document.querySelector('nav').classList.toggle('active');">
-             <span></span><span></span><span></span>
-             </div>
+                <span></span><span></span><span></span>
+            </div>
+
         </div>
     </header>
 
