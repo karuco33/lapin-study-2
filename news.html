@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お知らせブログ | 小学校受験専門塾 まなびの庭</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+
+            <div class="logo-image">
+                <a href="index.html">
+                <img src="image/logo.png" alt="ラパン学習教室幼児教室" width="200" height="50">
+               </a>
+           </div>
+
+            <nav id="nav-menu">
+                <ul>
+                    <li><a href="index.html">ホーム</a></li>
+                    <li><a href="course.html">クラス紹介</a></li>
+                    </li> <li><a href="news.html">お知らせ</a></li>
+                    <li><a href="contact.html" class="btn-contact">お問い合わせ</a></li>
+                </ul>
+            </nav>
+             <!-- スマホ用ハンバーガーボタン -->
+             <div class="hamburger" onclick="this.classList.toggle('active'); document.querySelector('nav').classList.toggle('active');">
+              <span></span><span></span><span></span>
+             </div>
+                    
+        </div>
+    </header>
+
+<!-- 準備中コンテンツ -->
+<div class="container">
+    <div style="padding: 150px 20px; text-align: center;">
+        
+        <!-- タイトルエリア -->
+        <h1 style="font-size: 2rem; color: var(--primary-color); margin-bottom: 10px;">お知らせブログ</h1>
+        <div style="width: 40px; height: 2px; background: var(--primary-color); margin: 0 auto 60px;"></div>
+
+        <!-- メッセージ -->
+        <div style="background-color: #f9f8f4; padding: 60px 20px; border-radius: 8px; max-width: 600px; margin: 0 auto;">
+            <p style="font-size: 1.2rem; font-weight: bold; color: var(--primary-color); margin-bottom: 20px;">
+                ただいま準備中です
+            </p>
+            <p style="color: #666; line-height: 2; margin-bottom: 40px;">
+                申し訳ございません。<br>
+                こちらのページは現在コンテンツを作成中です。<br>
+                公開まで今しばらくお待ちください。
+            </p>
+            
+            <!-- トップへ戻るボタン -->
+            <a href="index.html" class="btn-external">
+                トップページへ戻る
+            </a>
+        </div>
+
+    </div>
+</div>
+
+<footer>
+    <div class="container">
+        <div class="footer-layout">
+            
+            <!-- 左側：テキストロゴ・住所 -->
+            <div class="footer-info">
+                <!-- 画像を削除し、テキストをリンク化しました -->
+                <a href="index.html" class="footer-dept-link">
+                    <p class="footer-dept-name">ラパン学習塾 幼児教室</p>
+                </a>
+                <p class="footer-address">
+                    〒225-0015<br>
+                    神奈川県横浜市青葉区荏田北1-2-1
+                </p>
+            </div>
+
+            <!-- 右側：メニュー -->
+            <div class="footer-menu">
+                <ul>
+                    <li><a href="index.html">ホーム</a></li>
+                    <li><a href="course.html">クラス紹介</a></li>
+                    <li><a href="news.html">お知らせブログ</a></li>
+                    <li><a href="contact.html">お問い合わせ</a></li>
+                    <li><a href="privacy.html">プライバシーポリシー</a></li>
+                </ul>
+            </div>
+
+        </div>
+        
+        <!-- コピーライト -->
+        <div class="copyright">
+            &copy; 2025 ラパン学習塾 幼児教室 All Rights Reserved.
+        </div>
+    </div>
+</footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

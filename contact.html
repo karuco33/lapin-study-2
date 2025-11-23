@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お問い合わせ | 小学校受験専門塾 まなびの庭</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+
+            <div class="logo-image">
+                 <a href="index.html">
+                 <img src="image/logo.png" alt="ラパン学習教室幼児教室" width="200" height="50">
+                </a>
+            </div>
+
+            <nav id="nav-menu">
+                <ul>
+                    <li><a href="index.html">ホーム</a></li>
+                    <li><a href="course.html">クラス紹介</a></li>
+                    <li><a href="news.html">お知らせ</a></li>
+                    <li><a href="contact.html" class="btn-contact">お問い合わせ</a></li>
+                </ul>
+            </nav>
+            <!-- スマホ用ハンバーガーボタン -->
+            <div class="hamburger" onclick="this.classList.toggle('active'); document.querySelector('nav').classList.toggle('active');">
+             <span></span><span></span><span></span>
+             </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <section style="max-width: 700px; margin: 0 auto;">
+            <h1 class="section-title">お問い合わせ</h1>
+            <p style="margin-bottom: 40px;">体験授業のお申し込み、入塾に関するご相談など、お気軽にお問い合わせください。<br>内容を確認後、担当者より3営業日以内にご連絡させていただきます。</p>
+
+            <form action="#" method="post">
+                <div class="form-group">
+                    <label for="parent-name">保護者様のお名前 <span style="color: #d9534f; font-size: 0.8rem;">(必須)</span></label>
+                    <input type="text" id="parent-name" name="parent-name" placeholder="例：山田 花子" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="child-name">お子様のお名前</label>
+                    <input type="text" id="child-name" name="child-name" placeholder="例：山田 太郎">
+                </div>
+
+                <div class="form-group">
+                    <label for="age">お子様の現在の学年 <span style="color: #d9534f; font-size: 0.8rem;">(必須)</span></label>
+                    <select id="age" name="age" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px;">
+                        <option value="">選択してください</option>
+                        <option value="nencho">年長</option>
+                        <option value="nenchu">年中</option>
+                        <option value="nensho">年少</option>
+                        <option value="other">その他</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">メールアドレス <span style="color: #d9534f; font-size: 0.8rem;">(必須)</span></label>
+                    <input type="email" id="email" name="email" placeholder="例：info@example.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="tel">電話番号</label>
+                    <input type="tel" id="tel" name="tel" placeholder="例：090-1234-5678">
+                </div>
+
+                <div class="form-group">
+                    <label for="message">お問い合わせ内容 <span style="color: #d9534f; font-size: 0.8rem;">(必須)</span></label>
+                    <textarea id="message" name="message" rows="6" placeholder="ご質問やご相談内容をご記入ください" required></textarea>
+                </div>
+
+                <button type="submit">送信する</button>
+            </form>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-layout">
+                
+                <!-- 左側：テキストロゴ・住所 -->
+                <div class="footer-info">
+                    <!-- 画像を削除し、テキストをリンク化しました -->
+                    <a href="index.html" class="footer-dept-link">
+                        <p class="footer-dept-name">ラパン学習塾 幼児教室</p>
+                    </a>
+                    <p class="footer-address">
+                        〒225-0015<br>
+                        神奈川県横浜市青葉区荏田北1-2-1
+                    </p>
+                </div>
+
+                <!-- 右側：メニュー -->
+                <div class="footer-menu">
+                    <ul>
+                        <li><a href="index.html">ホーム</a></li>
+                        <li><a href="course.html">クラス紹介</a></li>
+                        <li><a href="news.html">お知らせブログ</a></li>
+                        <li><a href="contact.html">お問い合わせ</a></li>
+                        <li><a href="privacy.html">プライバシーポリシー</a></li>
+                    </ul>
+                </div>
+
+            </div>
+            
+            <!-- コピーライト -->
+            <div class="copyright">
+                &copy; 2025 ラパン学習塾 幼児教室 All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

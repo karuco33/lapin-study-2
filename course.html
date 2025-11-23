@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>クラス紹介 | ラパン学習教室幼児教室</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ヘッダー -->
+    <header>
+        <div class="container header-inner">
+            
+            <div class="logo-image">
+                <a href="index.html">
+                <img src="image/logo.png" alt="ラパン学習教室幼児教室" width="200" height="50">
+               </a>
+           </div>
+
+            <nav>
+                <ul>
+                    <li><a href="index.html">ホーム</a></li>
+                    <li><a href="course.html">クラス紹介</a></li>
+                    <li><a href="news.html">お知らせ</a></li>
+                    <li><a href="contact.html" class="btn-contact">お問い合わせ</a></li>
+                </ul>
+            </nav>
+            <!-- スマホ用ハンバーガーボタン -->
+            <div class="hamburger" onclick="this.classList.toggle('active'); document.querySelector('nav').classList.toggle('active');">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- ページタイトルエリア -->
+    <div class="page-header">
+        <h1>クラス紹介</h1>
+        <p>幼児部門では、英才クラス、小学校受験クラス、<br class="pc-only">私立内部進学生学習クラスの3つを行っております。</p>
+    </div>
+
+    <div class="container">
+
+        <!-- ① 英才クラス（仮） -->
+        <section class="class-section">
+            <h2 class="class-title">英才クラス</h2>
+            <div class="class-content">
+                <div class="class-img">
+                    <!-- 知育・パズルのイメージ -->
+                    <img src="image/class03.png" alt="英才クラス">
+                </div>
+                <div class="class-text">
+                    <h3 class="catchphrase">＠＠＠＠＠＠＠</h3>
+                    <p>＠＠＠＠＠＠＠＠＠＠＠＠</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ② 小学校受験クラス（仮） -->
+        <section class="class-section">
+            <h2 class="class-title">小学校受験クラス</h2>
+            <div class="class-content reverse">
+                <div class="class-img">
+                    <!-- 真剣に勉強しているイメージ -->
+                    <img src="image/class01.png" alt="小学校受験クラス">
+                </div>
+                <div class="class-text">
+                    <h3 class="catchphrase">＠＠＠＠＠＠＠</h3>
+                    <p>＠＠＠＠＠＠＠＠＠＠＠＠</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ③ 私立内部進学生学習クラス -->
+        <section class="class-section">
+            <h2 class="class-title">私立内部進学生学習クラス</h2>
+            
+            <!-- メイン説明 -->
+            <div class="class-content">
+                <div class="class-img">
+                    <!-- 個別指導・学習のイメージ -->
+                    <img src="image/class02.png" alt="私立内部進学生学習クラス">
+                </div>
+                <div class="class-text">
+                    <p>私立学校にお通いになっている生徒様を対象としておりますクラスです。<br>
+                    各学校のカリキュラム、テキスト、テストに対応し、成績を上位に保つための勉強法、また、指導を行って参ります。</p>
+                    <p>ただ、理解しにくい所やテスト前の指導だけでは上位は保てません。生徒が自らやる気を持つ事が大切です。その方法をそのお子様に向いております行い方で導きます。</p>
+                    <p>私立に的を当てた塾は少なく、当塾は現在通っていただいております学校、また卒業生の卒業校には特に指導に特化しております。何でもご相談下さい。</p>
+                </div>
+            </div>
+
+            <!-- 詳細情報（枠囲み） -->
+            <div class="class-detail-box">
+                <!-- 基本情報 -->
+                <dl class="class-dl">
+                    <div class="dl-row">
+                        <dt>対象年齢</dt>
+                        <dd>年長～高校3年生</dd>
+                    </div>
+                    <div class="dl-row">
+                        <dt>教科</dt>
+                        <dd>英語、数学、国語、社会、理科、古典、論文</dd>
+                    </div>
+                </dl>
+
+                <!-- 実績リスト -->
+                <div class="achievement-grid">
+                    <!-- 在籍校・指導実績 -->
+                    <div class="achievement-column">
+                        <h4 class="list-title">指導実績・在籍校</h4>
+                        <p class="list-note">下記学校より成績優秀賞者、<br>優秀者を多数輩出いたしております。</p>
+                        <ul class="school-list">
+                            <li>慶應幼稚舎</li>
+                            <li>慶應横浜初等部</li>
+                            <li>森村学園初等部</li>
+                            <li>四谷雙葉学園</li>
+                            <li>昭和女子大学附属</li>
+                            <li>桐光学園</li>
+                            <li>他</li>
+                        </ul>
+                    </div>
+
+                    <!-- 進学先 -->
+                    <div class="achievement-column">
+                        <h4 class="list-title">卒業生進学先</h4>
+                        <ul class="school-list">
+                            <li>慶應義塾大学 医学部、文学部、法学部、他</li>
+                            <li>東京大学医学部</li>
+                            <li>日本医科大学</li>
+                            <li>順天堂大学医学部</li>
+                            <li>東京医科歯科大学</li>
+                            <li>東京学芸大学</li>
+                            <li>他</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- 下部CTA -->
+        <div style="text-align: center; margin: 40px 0;">
+            <p style="margin-bottom: 20px; font-weight: bold;">体験授業や学習相談など、お気軽にお問い合わせください</p>
+            <a href="contact.html" class="btn-external">お問い合わせはこちら <span style="font-size:0.8em; margin-left:5px;">&gt;</span></a>
+        </div>
+
+    </div>
+
+
+    <!-- フッター -->
+    <footer>
+        <div class="container">
+            <div class="footer-layout">
+                
+                <!-- 左側：テキストロゴ・住所 -->
+                <div class="footer-info">
+                    <!-- 画像を削除し、テキストをリンク化しました -->
+                    <a href="index.html" class="footer-dept-link">
+                        <p class="footer-dept-name">ラパン学習塾 幼児教室</p>
+                    </a>
+                    <p class="footer-address">
+                        〒225-0015<br>
+                        神奈川県横浜市青葉区荏田北1-2-1
+                    </p>
+                </div>
+
+                <!-- 右側：メニュー -->
+                <div class="footer-menu">
+                    <ul>
+                        <li><a href="index.html">ホーム</a></li>
+                        <li><a href="course.html">クラス紹介</a></li>
+                        <li><a href="news.html">お知らせブログ</a></li>
+                        <li><a href="contact.html">お問い合わせ</a></li>
+                        <li><a href="privacy.html">プライバシーポリシー</a></li>
+                    </ul>
+                </div>
+
+            </div>
+            
+            <!-- コピーライト -->
+            <div class="copyright">
+                &copy; 2025 ラパン学習塾 幼児教室 All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

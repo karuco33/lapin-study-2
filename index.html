@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ラパン学習教室幼児教室</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+
+            <div class="logo-image">
+                 <a href="index.html">
+                 <!-- ※画像パスなどは現状のままでOKです -->
+                 <img src="image/logo.png" alt="ラパン学習教室幼児教室" width="200" height="50">
+                </a>
+            </div>
+
+            <nav id="nav-menu">
+                
+                <!-- ↓↓↓ ★ここに追加します★ ↓↓↓ -->
+                <div class="nav-logo-sp">
+                    <a href="index.html">
+                        <img src="image/logo.png" alt="ラパン学習教室幼児教室" width="200" height="50">
+                    </a>
+                </div>
+                <!-- ↑↑↑ 追加ここまで ↑↑↑ -->
+
+                <ul>
+                    <li><a href="index.html">ホーム</a></li>
+                    <li><a href="course.html">クラス紹介</a></li>
+                    <li><a href="news.html">お知らせ</a></li>
+                    <li><a href="contact.html" class="btn-contact">お問い合わせ</a></li>
+                </ul>
+            </nav>
+            
+            <!-- スマホ用ハンバーガーボタン -->
+            <div class="hamburger" onclick="this.classList.toggle('active'); document.querySelector('nav').classList.toggle('active');">
+                <span></span><span></span><span></span>
+            </div>
+
+        </div>
+    </header>
+
+    <div class="hero">
+        <div class="hero-wrapper">
+            <picture>
+                <source media="(max-width: 768px)" srcset="image/main-sp.jpg">
+                
+                <img src="image/main-pc.jpg" alt="元教員による個別指導。ラパン学習塾" class="hero-img">
+            </picture>
+        </div>
+    </div>
+
+    <section class="intro-section">
+        <div class="container">
+            <p class="intro-text">
+                ラパン学習塾は、小学生以上の生徒様の学習部門と、<br class="pc-only">
+                こちらのホームページの幼児部門にて行なっております学習塾です。
+            </p>
+            <div class="intro-btn-wrapper">
+                <a href="https://lapin-study.com/" target="_blank" rel="noopener noreferrer" class="btn-external">
+                    小学生以上はこちら <span style="font-size:0.8em; margin-left:5px;">&gt;</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="classes" class="container">
+        <h2 class="section-title">クラスのご紹介</h2>
+        
+        <p class="section-lead">
+            幼児部門では、英才クラス、小学校受験クラス、<br class="pc-only"> 私立内部進学生学習クラスの3つを行っております。
+        </p>
+        <div class="class-grid">
+            <div class="class-card">
+                <img src="image/class03.png" alt="英才クラス" style="margin-bottom:20px;">
+                <h3>英才クラス</h3>
+                <p>＠＠＠＠＠</p>
+            </div>
+            <div class="class-card">
+                <img src="image/class01.png" alt="小学校受験クラス" style="margin-bottom:20px;">
+                <h3>小学校受験クラス</h3>
+                <p>＠＠＠＠＠</p>
+            </div>
+            <div class="class-card">
+                <img src="image/class02.png" alt="私立内部進学生学習クラス" style="margin-bottom:20px;">
+                <h3>私立内部進学生学習クラス</h3>
+                <p>私立学校にお通いになっている生徒様を対象としておりますクラスです。</p>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 60px;">
+            <a href="course.html" class="btn-external">
+                クラスの詳細を見る <span style="font-size:0.8em; margin-left:5px;">&gt;</span>
+            </a>
+        </div>
+    </section>
+
+    <section id="message" style="background-color: #f5f7fa;">
+        <div class="container">
+            <h2 class="section-title">代表ごあいさつ</h2>
+            <div class="message-layout">
+                <div class="message-img">
+                    <img src="image/message.png" alt="代表写真">
+                </div>
+                <div class="message-text">
+                    <h3>文章を通じて心を育てたい（仮）</h3>
+                    <p>すべてのクラスにおきまして、教員資格を持つベテランの教師が、お預かり致しました生徒様の目的に向け一丸となり応援し共にゴールまで併走して参ます。</p>
+                    <p>数多くの卒業生を送り出し、各部野、また、大学にて、活躍をしております。それがわたくし達の誇りでございます。</p>
+                    <p>塾にとどまらず、人間形の場となり、学習をする意味や楽しさを体得して下さると幸いと考えまして、日々指導いたしております。ご興味がおありのクラスがございましたらどうぞ体験をなさってみて下さい。お待ちしております。</p>
+                    <p class="message-name">ラパン学習塾代表　上重 智美</p>
+
+                    
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="access-contact" style="background-color: #f0f5fa;">
+        <div class="container">
+            <h2 class="section-title">アクセス・お問い合わせ</h2> 
+            
+            <div class="access-grid">
+                <!-- 左側：アクセス情報 -->
+                <div class="access-box">
+                    <div>
+                        <h3 class="access-title">教室へのアクセス</h3>
+                        <div class="access-body">
+                            <p style="margin-bottom: 10px; font-weight: 500;">〒225-0015<br>神奈川県横浜市青葉区荏田北1-2-1</p>
+                            <p style="font-size: 0.95rem; color: #666;">
+                                東急田園都市線 江田駅 徒歩1分
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Googleマップボタン -->
+                    <a href="https://maps.google.com/" target="_blank" rel="noopener noreferrer" class="btn-external btn-full">
+                        Google Mapで見る <span style="font-size:0.8em; margin-left:5px;">&gt;</span>
+                    </a>
+                </div>
+
+                <!-- 右側：お問い合わせ -->
+                <div class="contact-box">
+                    <div>
+                        <h3 class="access-title">お問い合わせ</h3>
+                        <div class="access-body">
+                            <p style="text-align: center; line-height: 2;">
+                                体験授業のお申し込み、入塾に関するご相談など、<br>
+                                お気軽にお問い合わせください。
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- お問い合わせボタン -->
+                    <a href="contact.html" class="btn-external btn-full">
+                        お問い合わせフォーム <span style="font-size:0.8em; margin-left:5px;">&gt;</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="container">
+        <h2 class="section-title">お知らせ</h2>
+        <ul class="news-list">
+            <li class="news-item">
+                <a href="news.html">
+                    <span class="news-date">2025.xx.xx</span>
+                    ラパン学習塾幼児部門のホームページを公開しました。
+                </a>
+            </li>
+        </ul>
+        <div style="text-align: center; margin: 30px 0 40px;">
+            <a href="news.html" style="border-bottom: 1px solid var(--primary-color);">お知らせ一覧を見る &rarr;</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-layout">
+                
+                <!-- 左側：テキストロゴ・住所 -->
+                <div class="footer-info">
+                    <!-- 画像を削除し、テキストをリンク化しました -->
+                    <a href="index.html" class="footer-dept-link">
+                        <p class="footer-dept-name">ラパン学習塾 幼児教室</p>
+                    </a>
+                    <p class="footer-address">
+                        〒225-0015<br>
+                        神奈川県横浜市青葉区荏田北1-2-1
+                    </p>
+                </div>
+
+                <!-- 右側：メニュー -->
+                <div class="footer-menu">
+                    <ul>
+                        <li><a href="index.html">ホーム</a></li>
+                        <li><a href="course.html">クラス紹介</a></li>
+                        <li><a href="news.html">お知らせブログ</a></li>
+                        <li><a href="contact.html">お問い合わせ</a></li>
+                        <li><a href="privacy.html">プライバシーポリシー</a></li>
+                    </ul>
+                </div>
+
+            </div>
+            
+            <!-- コピーライト -->
+            <div class="copyright">
+                &copy; 2025 ラパン学習塾 幼児教室 All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
