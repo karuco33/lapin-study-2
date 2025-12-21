@@ -299,12 +299,13 @@ section {
     }
 }
 
-/* 塾長挨拶 */
+/* --- 塾長挨拶（修正版） --- */
 .message-layout {
     display: flex;
     flex-wrap: wrap;
     gap: 50px;
-    align-items: center;
+    /* align-items: center; を削除し、上揃えに変更 */
+    align-items: flex-start; 
 }
 
 .message-img {
@@ -312,25 +313,20 @@ section {
     min-width: 300px;
     display: flex; 
     justify-content: center;
-    align-items: center;
+    /* 写真自体の配置も上寄せにするため align-items は削除または flex-start */
+    align-items: flex-start; 
 }
 
 .message-img img {
-    /* ↓ スマホ・PCに合わせて伸縮しますが、最大幅を制限します */
     width: 100%;
     max-width: 350px; 
-    
-    /* ↓ これを入れると、どんな画像でも必ず「正方形」になります */
     aspect-ratio: 1 / 1; 
-    
-    /* ↓ 画像が歪まないように自動でトリミングします */
     object-fit: cover; 
-    
-    /* 角丸の程度（お好みで数字を調整してください） */
     border-radius: 15px; 
-    
-    /* 影をつけて少し浮き上がらせます */
     box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    
+    /* スマホ表示時に写真が上にくっつきすぎないよう微調整したい場合はここに margin-top を入れますが、
+       基本はこれでテキストの開始位置と揃います */
 }
 
 .message-text {
@@ -338,22 +334,33 @@ section {
     min-width: 300px;
 }
 
-.message-name {
-    margin-top: 30px;    /* 上の余白 */
-    font-weight: bold;   /* 太字 */
-    text-align: right;   /* ★ここで右寄せを指定 */
-    font-size: 1.1rem;   /* 少しだけ大きく */
-    color: var(--primary-color); /* 紺色にして強調 */
-    font-family: 'Noto Sans JP', sans-serif; 
-} /* ←★ここが抜けていました！これで以降のデザインが復活します */
+/* テキストの最初の段落の余白を消して、写真のトップと完全に揃える設定 */
+.message-text p:first-child {
+    margin-top: 0;
+}
 
-/* モバイル表示時の微調整（任意） */
+.message-name {
+    margin-top: 30px;
+    font-weight: bold;
+    text-align: right;
+    font-size: 1.1rem;
+    color: var(--primary-color);
+}
+
+/* モバイル表示時の微調整 */
 @media (max-width: 768px) {
-    /* スマホでは写真を少し小さくする */
+    .message-layout { 
+        flex-direction: column; 
+    }
+    .message-img {
+        /* スマホの時は写真を中央に寄せたい場合 */
+        justify-content: center;
+        width: 100%;
+    }
     .message-img img {
         width: 220px;
         height: 220px;
-        margin-bottom: 30px; /* テキストとの間隔を空ける */
+        margin-bottom: 30px;
     }
 }
 
@@ -907,70 +914,69 @@ a.footer-dept-link:hover {
     .class-dl dt { margin-bottom: 5px; }
 }
 
-/* ↓↓↓ アクセス・お問い合わせエリア（スクリーンショットに合わせて修正） ↓↓↓ */
+/* ↓↓↓ アクセス・お問い合わせエリア：余白を詰めた修正版 ↓↓↓ */
 
 /* 全体のレイアウト */
 .access-grid {
     display: flex;
     gap: 30px;
-    /* align-items: flex-start; を削除し、デフォルトの stretch (高さ揃え) にします */
     justify-content: space-between;
 }
 
 /* ボックス共通設定 */
 .access-box, .contact-box {
-    flex: 1; /* 幅を均等に */
+    flex: 1;
     background: var(--white);
-    padding: 50px 40px; /* 余白をたっぷりとる */
+    padding: 40px 30px; /* 上下のパディングを50px→40pxに少し詰めました */
     border-radius: 8px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    text-align: center;
     
-    /* 内部を縦並びのFlexboxにして、ボタン位置を制御 */
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* コンテンツとボタンを離す */
+    /* justify-content: space-between; を削除（ボタンを上に寄せるため） */
+    justify-content: flex-start; 
 }
 
-/* タイトル */
+/* タイトル（見出し） */
 .access-title {
     font-size: 1.4rem;
     color: var(--primary-color);
     border-bottom: 1px solid #eee;
-    padding-bottom: 20px;
-    margin-bottom: 30px;
+    padding-bottom: 15px; /* 線との間隔を少し詰めました */
+    margin-bottom: 20px;  /* 下のテキストとの間隔を30px→20pxに */
     margin-top: 0;
-    text-align: left; /* 左揃え */
-}
-/* 右側のタイトルだけ中央揃えにしたい場合はこちら */
-.contact-box .access-title {
     text-align: center;
 }
 
-/* 本文エリア */
+/* 住所や説明文のエリア */
 .access-body {
-    margin-bottom: 40px; /* ボタンとの間隔 */
+    margin-bottom: 25px;  /* ボタンとの間隔を40px→25pxに狭くしました */
+    text-align: center;
 }
 
-/* ボタンの幅広設定（新規追加クラス） */
+.access-body p {
+    line-height: 1.7;    /* 行間をわずかに詰めました */
+    margin: 0;
+}
+
+/* ボタンの設定 */
 .btn-full {
     width: 100%;
+    max-width: 280px;    /* ボタンが横に広がりすぎないよう最大幅を設定（お好みで） */
+    margin: 0 auto;      /* 中央寄せ */
     display: block;
     text-align: center;
-    box-sizing: border-box; /* paddingを含めた幅計算 */
-    padding: 18px 0; /* 少し縦幅を厚くして押しやすく */
-    font-size: 1.1rem;
-    background-color: var(--primary-color); /* 濃い紺色 */
+    box-sizing: border-box;
+    padding: 16px 0;     /* ボタン自体の縦幅も少しスマートに */
+    font-size: 1.05rem;
+    background-color: var(--primary-color);
     color: #fff;
-    margin-top: auto; /* 上の要素との距離を自動で埋めて、ボックス最下部に配置 */
-}
-.btn-full:hover {
-    opacity: 0.9;
-    background-color: #2c4a7c;
-    color: #fff;
-    transform: none; /* 浮き上がりアニメーションをオフにして落ち着かせる（お好みで） */
+    border-radius: 4px;
+    font-weight: bold;
 }
 
-/* スマホ表示時の調整 */
+/* --- スマホ表示時の調整 --- */
 @media (max-width: 768px) {
     .access-grid {
         flex-direction: column;
@@ -981,10 +987,13 @@ a.footer-dept-link:hover {
     }
     .access-title {
         font-size: 1.2rem;
-        text-align: center; /* スマホでは両方中央揃えが見やすい */
+        margin-bottom: 15px;
     }
-    .contact-box .access-title {
-        text-align: center;
+    .access-body {
+        margin-bottom: 20px; /* スマホではさらに少し詰める */
+    }
+    .btn-full {
+        max-width: 100%;    /* スマホでは横幅いっぱいに */
     }
 }
 
@@ -1202,3 +1211,245 @@ a.footer-dept-link:hover {
     }
 }
 
+.btn-wrapper {
+    display: flex;
+    justify-content: center; /* 横方向の中央寄せ */
+    width: 100%;
+    margin-top: 20px;        /* 上のテキストとの余白 */
+}
+
+/* ボタン自体の設定（もし横幅が広すぎる場合の微調整） */
+.btn-wrapper .btn-full {
+    display: inline-block;   /* 横幅を中身に合わせる（または指定する） */
+    width: auto;             /* もし100%になっていたらautoに戻す */
+    min-width: 250px;        /* ボタンの最低限の横幅（お好みで） */
+    text-align: center;
+}
+
+/* --- 料金表セクションのデザイン --- */
+.price-section {
+    margin-top: 60px;
+    padding: 40px;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+}
+
+.price-title {
+    text-align: center;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+}
+
+.admission-fee-box {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    padding: 15px;
+    background-color: #f0f5fa;
+    border-radius: 4px;
+    color: var(--primary-color);
+}
+
+.admission-fee-box span {
+    font-size: 1.6rem;
+    margin-left: 10px;
+}
+
+/* テーブルの設定 */
+.price-table-wrapper {
+    overflow-x: auto; /* スマホで横スクロール可能に */
+}
+
+.price-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.price-table th, .price-table td {
+    border: 1px solid #ddd;
+    padding: 20px;
+    text-align: left;
+}
+
+.price-table th {
+    background-color: #f8f9fa;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.course-name {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: var(--primary-color);
+}
+
+.subjects {
+    font-size: 0.9rem;
+    color: #666;
+    display: inline-block;
+    margin-top: 5px;
+}
+
+.price-notice {
+    font-size: 0.9rem;
+    color: #666;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* スマホ用の微調整 */
+@media (max-width: 768px) {
+    .price-section {
+        padding: 20px;
+    }
+    .price-table th, .price-table td {
+        padding: 15px 10px;
+        font-size: 0.9rem;
+    }
+    .admission-fee-box {
+        font-size: 1.1rem;
+    }
+}
+
+/* --- お問い合わせページ (contact.html) デザイン統一版 --- */
+
+.contact-page {
+    padding-bottom: 60px;
+    background-color: #f8f9fa;
+}
+
+.contact-intro {
+    text-align: center;
+    padding: 30px 0 20px; /* 余白を圧縮 */
+}
+
+/* タイトル：クラス紹介のデザイン に統一 */
+.section-accent-title {
+    font-size: 1.6rem;
+    color: var(--primary-color);
+    border-left: 6px solid var(--primary-color); /* 左側の太線 */
+    padding-left: 20px;
+    margin: 0 0 25px 0;
+    font-weight: 700;
+}
+
+.inquiry-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    margin-bottom: 35px;
+    padding: 30px; /* 全体的に余白を整理 */
+}
+
+/* 電話・フォームの共通調整 */
+.phone-content {
+    text-align: center;
+}
+
+.phone-link {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+/* アスタリスクの位置調整 */
+.required {
+    font-size: 0; /* 元の文字を消す */
+    margin-left: 12px; /* ラベルとの間隔を空ける */
+}
+
+.required::after {
+    content: "＊";
+    font-size: 1rem;
+    color: #e63946; /* 赤色のアスタリスク */
+    vertical-align: middle;
+}
+
+.optional {
+    font-size: 0.8rem;
+    color: #999;
+    margin-left: 12px;
+}
+
+/* セレクトボックスのデザイン */
+.select-box {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231a355b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 16px;
+    appearance: none;
+    cursor: pointer;
+}
+
+.form-row-2col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.form-flex {
+    display: flex;
+    gap: 15px;
+}
+
+.form-flex input {
+    flex: 1;
+}
+
+/* プライバシーポリシー同意エリア */
+.policy-agreement {
+    text-align: center;
+    margin: 30px 0;
+    padding: 25px;
+    background: #f0f5fa;
+    border-radius: 6px;
+}
+
+.policy-link {
+    color: var(--primary-color);
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+/* ボタン：四角く整える */
+.btn-submit {
+    width: 100%;
+    max-width: 350px;
+    padding: 18px;
+    background: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .form-flex { flex-direction: column; gap: 10px; }
+    .form-row-2col { grid-template-columns: 1fr; gap: 0; }
+    .inquiry-card { padding: 20px; }
+    .phone-link { font-size: 2rem; }
+}

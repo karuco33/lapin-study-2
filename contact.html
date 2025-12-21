@@ -44,52 +44,123 @@
         </div>
     </header>
 
-    <div class="container">
-        <section style="max-width: 700px; margin: 0 auto;">
-            <h1 class="section-title">お問い合わせ</h1>
-            <p style="margin-bottom: 40px;">体験授業のお申し込み、入塾に関するご相談など、お気軽にお問い合わせください。<br>内容を確認後、担当者よりご連絡させていただきます。</p>
-
-            <form action="#" method="post">
-                <div class="form-group">
-                    <label for="parent-name">保護者様のお名前 <span style="color: #d9534f; font-size: 0.8rem;">(必須)</span></label>
-                    <input type="text" id="parent-name" name="parent-name" placeholder="例：山田 花子" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="child-name">お子様のお名前</label>
-                    <input type="text" id="child-name" name="child-name" placeholder="例：山田 太郎">
-                </div>
-
-                <div class="form-group">
-                    <label for="age">お子様の現在の学年 <span style="color: #d9534f; font-size: 0.8rem;">(必須)</span></label>
-                    <select id="age" name="age" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px;">
-                        <option value="">選択してください</option>
-                        <option value="nencho">年長</option>
-                        <option value="nenchu">年中</option>
-                        <option value="nensho">年少</option>
-                        <option value="other">その他</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="email">メールアドレス <span style="color: #d9534f; font-size: 0.8rem;">(必須)</span></label>
-                    <input type="email" id="email" name="email" placeholder="例：info@example.com" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="tel">電話番号</label>
-                    <input type="tel" id="tel" name="tel" placeholder="例：090-1234-5678">
-                </div>
-
-                <div class="form-group">
-                    <label for="message">お問い合わせ内容 <span style="color: #d9534f; font-size: 0.8rem;">(必須)</span></label>
-                    <textarea id="message" name="message" rows="6" placeholder="ご質問やご相談内容をご記入ください" required></textarea>
-                </div>
-
-                <button type="submit">送信する</button>
-            </form>
-        </section>
+    <div class="page-header">
+        <div class="container">
+            <h1>お問い合わせ</h1>
+            <p>
+                体験授業のお申し込み、入塾に関するご相談など、<br class="pc-only">
+                お気軽にお問い合わせください。
+            </p>
+        </div>
     </div>
+    
+    <main class="contact-page">
+        <div class="container">
+    
+            <section class="phone-inquiry">
+                <div class="inquiry-card">
+                    <div class="card-header">
+                        <h3 class="section-accent-title">電話でのお問い合わせ</h3>
+                    </div>
+                    <div class="phone-content">
+                        <a href="tel:0457774577" class="phone-link">☎ 045-777-4577</a>
+                        <p class="phone-time">受付時間：14:00〜21:00</p>
+                    </div>
+                </div>
+            </section>
+    
+            <section class="mail-inquiry">
+                <div class="inquiry-card">
+                    <div class="card-header">
+                        <h3 class="section-accent-title">メールでのお問い合わせ</h3>
+                    </div>
+                    
+                    <form action="#" method="post" class="contact-form">
+                        <p class="form-intro">以下のフォームに必要事項をご入力ください。</p>
+    
+                        <div class="form-group">
+                            <label>お子様のお名前<span class="required">必須</span></label>
+                            <div class="form-flex">
+                                <input type="text" name="child_last_name" placeholder="姓" required>
+                                <input type="text" name="child_first_name" placeholder="名" required>
+                            </div>
+                        </div>
+    
+                        <div class="form-group">
+                            <label>お子様のお名前（フリガナ）<span class="required">必須</span></label>
+                            <div class="form-flex">
+                                <input type="text" name="child_last_kana" placeholder="セイ" required>
+                                <input type="text" name="child_first_kana" placeholder="メイ" required>
+                            </div>
+                        </div>
+    
+                        <div class="form-row-2col">
+                            <div class="form-group">
+                                <label>お子様の学年<span class="required">必須</span></label>
+                                <select name="grade" required class="select-box">
+                                    <option value="" disabled selected>選択してください</option>
+                                    <option value="2才">2才</option>
+                                    <option value="年少">年少</option>
+                                    <option value="年中">年中</option>
+                                    <option value="年長">年長</option>
+                                    <option value="その他">その他</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>お子様の性別<span class="required">必須</span></label>
+                                <select name="gender" required class="select-box">
+                                    <option value="" disabled selected>選択してください</option>
+                                    <option value="男">男</option>
+                                    <option value="女">女</option>
+                                    <option value="その他">その他</option>
+                                </select>
+                            </div>
+                        </div>
+    
+                        <div class="form-group">
+                            <label>保護者様の名前<span class="required">必須</span></label>
+                            <div class="form-flex">
+                                <input type="text" name="parent_last_name" placeholder="姓" required>
+                                <input type="text" name="parent_first_name" placeholder="名" required>
+                            </div>
+                        </div>
+    
+                        <div class="form-row-2col">
+                            <div class="form-group">
+                                <label>お電話番号<span class="required">必須</span></label>
+                                <input type="tel" name="tel" placeholder="0457774577（ハイフンなし）" required>
+                            </div>
+                            <div class="form-group">
+                                <label>メールアドレス<span class="required">必須</span></label>
+                                <input type="email" name="email" placeholder="example@mail.com" required>
+                            </div>
+                        </div>
+    
+                        <div class="form-group">
+                            <label>ご住所<span class="required">必須</span></label>
+                            <input type="text" name="address" placeholder="都道府県・市区町村・番地・建物名" required>
+                        </div>
+    
+                        <div class="form-group">
+                            <label>ご質問・ご要望など<span class="optional">任意</span></label>
+                            <textarea name="message" rows="4"></textarea>
+                        </div>
+    
+                        <div class="policy-agreement">
+                            <p>
+                                <a href="privacy.html" target="_blank" class="policy-link">プライバシーポリシー</a>について同意いただき、<br class="pc-only">
+                                次の画面へお進みください。
+                            </p>
+                        </div>
+    
+                        <div class="form-submit">
+                            <button type="submit" class="btn-submit">送信内容を確認する</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </main>
 
     <footer>
         <div class="container">
@@ -126,6 +197,7 @@
             </div>
         </div>
     </footer>
-    <script src="script.js"></script>
+
+    <script src="js_script.js"></script>
 </body>
 </html>
