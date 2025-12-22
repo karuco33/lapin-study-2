@@ -1503,48 +1503,59 @@ a.footer-dept-link:hover {
     word-break: break-all;
 }
 
-/* ボタンの横並び設定 */
+/* --- 確認ページ (confirm.php) ボタンのズレ修正 --- */
 .confirm-btn-group {
     display: flex;
     justify-content: center;
+    align-items: center; /* 上下の中央を揃える */
     gap: 20px;
     margin-top: 40px;
 }
 
-/* 「修正する」ボタン（控えめなデザイン） */
-.btn-back {
-    background-color: #fff;
-    color: #666;
-    border: 1px solid #ccc;
-    padding: 15px 40px;
-    border-radius: 4px;
-    cursor: pointer;
+/* 両方のボタンに共通する土台を設定 */
+.btn-back, 
+.btn-submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 56px; /* 高さを数値で固定して完全に揃える */
+    padding: 0 40px;
     font-size: 1rem;
     font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
     transition: all 0.3s;
+    box-sizing: border-box; /* 枠線を含めたサイズ計算にする */
+}
+
+/* 「修正する」ボタンの個別デザイン */
+.btn-back {
+    background-color: #f0f0f0; /* 少しグレーにして「戻る」感を出します */
+    color: #333;
+    border: 1px solid #ccc;
 }
 
 .btn-back:hover {
-    background-color: #eee;
+    background-color: #e0e0e0;
 }
 
-/* スマホ表示での調整 */
+/* 「送信する」ボタン（既存の.btn-submitの設定を活かす） */
+.btn-submit {
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    margin: 0; /* お問い合わせページ用の余計なマージンを消す */
+}
+
+/* スマホ表示 */
 @media (max-width: 768px) {
-    .confirm-item {
-        flex-direction: column;
-    }
-    .confirm-item dt {
-        width: 100%;
-        margin-bottom: 5px;
-        font-size: 0.9rem;
-    }
     .confirm-btn-group {
         flex-direction: column;
         gap: 15px;
     }
     .btn-back, .btn-submit {
         width: 100%;
-        max-width: none;
+        max-width: 350px;
     }
 }
 
