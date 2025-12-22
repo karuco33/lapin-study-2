@@ -4,8 +4,8 @@
  */
 
 // 1. メールの設定
-$to_email = "your-name@gmail.com"; // ★ご自身のメールアドレス
-$subject  = "【ラパン学習塾】ホームページからのお問い合わせ";
+$to_email = "mff.cqy88@gmail.com"; // ★ご自身のメールアドレス
+$subject  = "【ラパン学習塾 幼児教室】ホームページからのお問い合わせ";
 $thanks_page = "thanks.html";
 
 // 2. 日本語設定の徹底（おまじない）

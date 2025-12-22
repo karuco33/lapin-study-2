@@ -50,6 +50,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <dd><?php echo $child_name; ?></dd>
                     </dl>
                     <dl class="confirm-item">
+                         <dt>お子様のお名前（カナ）</dt>
+                        <dd><?php echo $child_kana; ?></dd>
+                     </dl>
+
+                    <dl class="confirm-item">
                         <dt>学年・性別</dt>
                         <dd><?php echo $grade; ?> / <?php echo $gender; ?></dd>
                     </dl>
