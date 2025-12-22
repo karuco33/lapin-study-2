@@ -1322,27 +1322,34 @@ a.footer-dept-link:hover {
     background-color: #f8f9fa;
 }
 
+/* 3. お問い合わせページ内の各ブロック（section）の余白を詰める */
+.contact-page section {
+    padding: 20px 0; /* 80pxから20pxへ大幅に短縮 */
+}
+
 .contact-intro {
     text-align: center;
     padding: 30px 0 20px; /* 余白を圧縮 */
 }
 
-/* タイトル：クラス紹介のデザイン に統一 */
+/* タイトルと内容の間の余白も少し詰める */
 .section-accent-title {
     font-size: 1.6rem;
     color: var(--primary-color);
-    border-left: 6px solid var(--primary-color); /* 左側の太線 */
+    border-left: 6px solid var(--primary-color);
     padding-left: 20px;
-    margin: 0 0 25px 0;
+    margin: 0 0 25px 0; 
     font-weight: 700;
 }
 
+/* --- お問い合わせブロックの余白調整 --- */
 .inquiry-card {
     background: #fff;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    margin-bottom: 35px;
-    padding: 30px; /* 全体的に余白を整理 */
+    margin-bottom: 20px; /* 35pxから20pxに縮小してブロックの間を詰める */
+    padding: 40px 30px; 
+    border: 1px solid #eee;
 }
 
 /* 電話・フォームの共通調整 */
@@ -1356,8 +1363,9 @@ a.footer-dept-link:hover {
     color: var(--primary-color);
 }
 
+/* フォーム項目間の余白を微調整 */
 .form-group {
-    margin-bottom: 22px;
+    margin-bottom: 22px; 
 }
 
 .form-group label {
@@ -1367,23 +1375,22 @@ a.footer-dept-link:hover {
     color: var(--primary-color);
 }
 
-/* アスタリスクの位置調整 */
+/* --- 必須バッジのデザイン（画像参照） --- */
 .required {
-    font-size: 0; /* 元の文字を消す */
-    margin-left: 12px; /* ラベルとの間隔を空ける */
-}
-
-.required::after {
-    content: "＊";
-    font-size: 1rem;
-    color: #e63946; /* 赤色のアスタリスク */
+    display: inline-block;
+    background-color: #e63946; /* 赤色バッジ */
+    color: #ffffff; /* 白色テキスト */
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 2px 8px;
+    border-radius: 4px; /* 角丸 */
+    margin-left: 10px;
     vertical-align: middle;
 }
 
-.optional {
-    font-size: 0.8rem;
-    color: #999;
-    margin-left: 12px;
+/* 以前のアスタリスク設定（::after）は削除します */
+.required::after {
+    content: none;
 }
 
 /* セレクトボックスのデザイン */
@@ -1447,9 +1454,315 @@ a.footer-dept-link:hover {
     margin: 0 auto;
 }
 
+/* 任意のラベルもデザインを合わせる場合（任意） */
+.optional {
+    display: inline-block;
+    background-color: #999;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
 @media (max-width: 768px) {
     .form-flex { flex-direction: column; gap: 10px; }
     .form-row-2col { grid-template-columns: 1fr; gap: 0; }
     .inquiry-card { padding: 20px; }
     .phone-link { font-size: 2rem; }
+}
+
+/* --- 確認ページ (confirm.html) 専用 --- */
+.confirm-page {
+    padding-top: 60px;
+    padding-bottom: 80px;
+    background-color: #f8f9fa;
+}
+
+.confirm-list {
+    margin-bottom: 40px;
+}
+
+.confirm-item {
+    display: flex;
+    border-bottom: 1px solid #eee;
+    padding: 15px 0;
+}
+
+.confirm-item dt {
+    width: 200px; /* 項目名の幅 */
+    font-weight: bold;
+    color: var(--primary-color);
+    flex-shrink: 0;
+}
+
+.confirm-item dd {
+    margin: 0;
+    color: #333;
+    word-break: break-all;
+}
+
+/* ボタンの横並び設定 */
+.confirm-btn-group {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+/* 「修正する」ボタン（控えめなデザイン） */
+.btn-back {
+    background-color: #fff;
+    color: #666;
+    border: 1px solid #ccc;
+    padding: 15px 40px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.btn-back:hover {
+    background-color: #eee;
+}
+
+/* スマホ表示での調整 */
+@media (max-width: 768px) {
+    .confirm-item {
+        flex-direction: column;
+    }
+    .confirm-item dt {
+        width: 100%;
+        margin-bottom: 5px;
+        font-size: 0.9rem;
+    }
+    .confirm-btn-group {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .btn-back, .btn-submit {
+        width: 100%;
+        max-width: none;
+    }
+}
+
+/* --- 送信完了ページ (thanks.html) 専用 --- */
+.thanks-page {
+    padding: 80px 0;
+    text-align: center;
+    background-color: #f8f9fa;
+}
+
+.thanks-content {
+    max-width: 700px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 60px 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.thanks-message h2 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+}
+
+.thanks-message p {
+    line-height: 2;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.thanks-page .btn-wrapper {
+    margin-top: 40px;
+}
+
+/* --- 背景色の共通ルール設定 --- */
+
+/* 白背景セクションの余白調整 */
+#classes, #message {
+    background-color: var(--white);
+}
+
+/* アイスブルー背景セクションの統一 */
+.intro-section, 
+.bg-light-blue {
+    background-color: #f0f5fa !important; /* 強制的にアイスブルーに固定 */
+    border-top: 1px solid rgba(26, 53, 91, 0.05);
+    border-bottom: 1px solid rgba(26, 53, 91, 0.05);
+}
+
+/* --- 保護者さまの声：アイコンとレイアウトの修正 --- */
+
+.voice-header {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* アイコンと名前の間隔 */
+    margin-bottom: 20px;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 15px;
+}
+
+/* シルエットアイコン */
+.user-silhouette {
+    width: 50px;
+    height: 50px;
+    background-color: #e0e7ef;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #a0aec0;
+    flex-shrink: 0;
+}
+
+.voice-info {
+    font-weight: 700;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.voice-body {
+    position: relative;
+}
+
+/* TOPページ用：長文を省略する設定 */
+.text-truncate {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4; /* 従来のブラウザ用 */
+    line-clamp: 4;         /* 標準プロパティ（これを追加して警告を消します） */
+    overflow: hidden;
+}
+
+/* 全文表示用（voice.html） */
+.voice-card-full {
+    margin-bottom: 30px;
+    background: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(26, 53, 91, 0.05);
+}
+
+/* --- 共通の余白設定を調整 --- */
+
+/* 1. ページヘッダー（紺色）の下の余白を消す */
+.page-header {
+    background-color: var(--primary-color);
+    padding: 60px 20px;
+    text-align: center;
+    color: white;
+    margin-bottom: 0; /* 60pxや20pxから 0 に変更 */
+}
+
+/* 2. メインコンテンツの上部の余白を個別に制御 */
+.voice-page, .contact-page, .course-page {
+    padding-top: 40px; /* ここでお好みの「詰まり具合」を調整できます */
+}
+
+/* 3. フッターの上の強制的な余白を消す */
+footer {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 80px 0 30px;
+    margin-top: 0; /* var(--spacing-lg) から 0 に変更 */
+}
+
+/* 4. セクションの最後とフッターがくっつきすぎないよう調整 */
+main > section:last-of-type,
+.voice-full-list {
+    padding-bottom: 80px; /* コンテンツが終わった後に適切な余白を持たせる */
+}
+
+/* 5. 以前の line-clamp 警告の修正（標準プロパティの追記） */
+.text-truncate {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    line-clamp: 4; /* スクリーンショット 2.42.03 の警告対策 */
+    overflow: hidden;
+}
+
+/* --- 保護者さまの声：デザイン調整 --- */
+
+#parent-voice {
+    padding: 80px 0;
+}
+
+.voice-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* PCで横並び */
+    gap: 30px;
+}
+
+.voice-card {
+    background: var(--white);
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(26, 53, 91, 0.06);
+    border: 1px solid #eef2f6;
+    display: flex;
+    flex-direction: column;
+}
+
+.voice-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 15px;
+}
+
+.user-silhouette {
+    width: 50px;
+    height: 50px;
+    background-color: #e0e7ef;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #a0aec0;
+    flex-shrink: 0;
+}
+
+.voice-info {
+    font-weight: 700;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.voice-text {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: #555;
+    /* 三点リーダー（...）の設定を完全に解除 */
+    overflow: visible;
+    display: block;
+    -webkit-line-clamp: none; /* 従来のブラウザ用 */
+    line-clamp: none;         /* ★標準プロパティ（これを追加） */
+}
+
+.view-more-btn-wrapper {
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* スマホ対応 */
+@media (max-width: 768px) {
+    .voice-grid {
+        grid-template-columns: 1fr; /* スマホで縦並び */
+        gap: 20px;
+    }
+    
+    .view-more-btn-wrapper .btn-external {
+        width: 100%;
+        max-width: 320px;
+        box-sizing: border-box;
+    }
 }
