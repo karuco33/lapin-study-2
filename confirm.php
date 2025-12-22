@@ -45,64 +45,64 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
 
                 <div class="confirm-list">
-                    <dl class="confirm-item">
-                        <dt>お子様のお名前</dt>
-                        <dd><?php echo $child_name; ?></dd>
-                    </dl>
-                    <dl class="confirm-item">
-                         <dt>お子様のお名前（カナ）</dt>
-                        <dd><?php echo $child_kana; ?></dd>
-                     </dl>
+    <dl class="confirm-item">
+        <dt>お子様のお名前</dt>
+        <dd><?php echo $child_name; ?></dd>
+    </dl>
+    <dl class="confirm-item">
+        <dt>お子様のお名前（カナ）</dt>
+        <dd><?php echo $child_kana; ?></dd>
+    </dl>
+    <dl class="confirm-item">
+        <dt>学年・性別</dt>
+        <dd><?php echo $grade; ?> / <?php echo $gender; ?></dd>
+    </dl>
+    <dl class="confirm-item">
+        <dt>保護者様の名前</dt>
+        <dd><?php echo $parent_name; ?></dd>
+    </dl>
+    <dl class="confirm-item">
+        <dt>お電話番号</dt>
+        <dd><?php echo $tel; ?></dd>
+    </dl>
+    <dl class="confirm-item">
+        <dt>メールアドレス</dt>
+        <dd><?php echo $email; ?></dd>
+    </dl>
+    <dl class="confirm-item">
+        <dt>ご住所</dt>
+        <dd><?php echo $address; ?></dd>
+    </dl>
+    <dl class="confirm-item">
+        <dt>ご質問・ご要望など</dt>
+        <dd><?php echo nl2br($message); ?></dd>
+    </dl>
+</div>
 
-                    <dl class="confirm-item">
-                        <dt>学年・性別</dt>
-                        <dd><?php echo $grade; ?> / <?php echo $gender; ?></dd>
-                    </dl>
-                    <dl class="confirm-item">
-                        <dt>保護者様の名前</dt>
-                        <dd><?php echo $parent_name; ?></dd>
-                    </dl>
-                    <dl class="confirm-item">
-                        <dt>お電話番号</dt>
-                        <dd><?php echo $tel; ?></dd>
-                    </dl>
-                    <dl class="confirm-item">
-                        <dt>メールアドレス</dt>
-                        <dd><?php echo $email; ?></dd>
-                    </dl>
-                    <dl class="confirm-item">
-                        <dt>ご住所</dt>
-                        <dd><?php echo $address; ?></dd>
-                    </dl>
-                    <dl class="confirm-item">
-                        <dt>ご質問・ご要望など</dt>
-                        <dd><?php echo nl2br($message); ?></dd>
-                    </dl>
-                </div>
+<div class="confirm-btn-group">
+    <div class="btn-unit">
+        <button type="button" onclick="history.back()" class="btn-back">修正する</button>
+    </div>
 
-                <div class="confirm-btn-group">
-                    <form action="contact.html" method="POST">
-                        <button type="button" onclick="history.back()" class="btn-back">修正する</button>
-                    </form>
-
-                    <form action="mail.php" method="POST">
-                        <input type="hidden" name="child_last_name" value="<?php echo h($_POST['child_last_name']); ?>">
-                        <input type="hidden" name="child_first_name" value="<?php echo h($_POST['child_first_name']); ?>">
-                        <input type="hidden" name="child_last_kana" value="<?php echo h($_POST['child_last_kana']); ?>">
-                        <input type="hidden" name="child_first_kana" value="<?php echo h($_POST['child_first_kana']); ?>">
-                        <input type="hidden" name="grade" value="<?php echo $grade; ?>">
-                        <input type="hidden" name="gender" value="<?php echo $gender; ?>">
-                        <input type="hidden" name="parent_last_name" value="<?php echo h($_POST['parent_last_name']); ?>">
-                        <input type="hidden" name="parent_first_name" value="<?php echo h($_POST['parent_first_name']); ?>">
-                        <input type="hidden" name="tel" value="<?php echo $tel; ?>">
-                        <input type="hidden" name="email" value="<?php echo $email; ?>">
-                        <input type="hidden" name="address" value="<?php echo $address; ?>">
-                        <input type="hidden" name="message" value="<?php echo $message; ?>">
-                        
-                        <button type="submit" class="btn-submit">この内容で送信する</button>
-                    </form>
-                </div>
-            </div>
+    <div class="btn-unit">
+        <form action="mail.php" method="POST">
+            <input type="hidden" name="child_last_name" value="<?php echo h($_POST['child_last_name']); ?>">
+            <input type="hidden" name="child_first_name" value="<?php echo h($_POST['child_first_name']); ?>">
+            <input type="hidden" name="child_last_kana" value="<?php echo h($_POST['child_last_kana']); ?>">
+            <input type="hidden" name="child_first_kana" value="<?php echo h($_POST['child_first_kana']); ?>">
+            <input type="hidden" name="grade" value="<?php echo $grade; ?>">
+            <input type="hidden" name="gender" value="<?php echo $gender; ?>">
+            <input type="hidden" name="parent_last_name" value="<?php echo h($_POST['parent_last_name']); ?>">
+            <input type="hidden" name="parent_first_name" value="<?php echo h($_POST['parent_first_name']); ?>">
+            <input type="hidden" name="tel" value="<?php echo $tel; ?>">
+            <input type="hidden" name="email" value="<?php echo $email; ?>">
+            <input type="hidden" name="address" value="<?php echo $address; ?>">
+            <input type="hidden" name="message" value="<?php echo $message; ?>">
+            
+            <button type="submit" class="btn-submit">この内容で送信する</button>
+        </form>
+    </div>
+</div>
         </div>
     </main>
 

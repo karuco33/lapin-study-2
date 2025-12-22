@@ -1473,25 +1473,26 @@ a.footer-dept-link:hover {
     .phone-link { font-size: 2rem; }
 }
 
-/* --- 確認ページ (confirm.html) 専用 --- */
+/* --- 確認ページ全体のレイアウト設定 --- */
 .confirm-page {
-    padding-top: 60px;
-    padding-bottom: 80px;
-    background-color: #f8f9fa;
+    padding-top: 60px;    /* ヘッダーとの隙間 */
+    padding-bottom: 80px; /* フッターとの隙間 */
+    background-color: #f8f9fa; /* 背景色 */
 }
 
 .confirm-list {
-    margin-bottom: 40px;
+    margin-bottom: 40px; /* リストとボタンの間の隙間 */
 }
 
+/* --- 確認項目のデザイン --- */
 .confirm-item {
     display: flex;
     border-bottom: 1px solid #eee;
-    padding: 15px 0;
+    padding: 20px 0;
 }
 
 .confirm-item dt {
-    width: 200px; /* 項目名の幅 */
+    width: 220px;
     font-weight: bold;
     color: var(--primary-color);
     flex-shrink: 0;
@@ -1500,71 +1501,100 @@ a.footer-dept-link:hover {
 .confirm-item dd {
     margin: 0;
     color: #333;
-    word-break: break-all;
 }
 
-/* --- 確認ページ ボタンのズレ完全解消版 --- */
+/* --- 確認ページ ボタンのズレ 最終解決策 --- */
 
 .confirm-btn-group {
     display: flex;
     justify-content: center;
-    align-items: center; /* 垂直方向の中央を強制的に揃える */
+    align-items: center;
     gap: 20px;
     margin-top: 40px;
 }
 
-/* ボタンの共通土台：高さを数値でガチガチに固定します */
+/* ★ボタンを包む「箱」の高さをガチガチに固定する */
+.confirm-btn-group .btn-unit,
+.confirm-btn-group form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px !important; /* 親の高さを強制固定 */
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* ★ボタン本体：全ての装飾を一度真っさらにして、再構築する */
 .btn-back, 
 .btn-submit {
-    appearance: none;     /* ブラウザ独自のボタン装飾をリセット */
+    /* 1. 全リセット（ブラウザの勝手な装飾を消す） */
     -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+    background: none;
+    
+    /* 2. 構造の固定 */
     display: flex;
     align-items: center;
     justify-content: center;
     
-    height: 56px;         /* 高さを指定 */
-    width: 240px;         /* 横幅を指定 */
-    padding: 0;           /* パディングによるズレを防止 */
-    margin: 0;            /* マージンによるズレを防止 */
+    /* 3. サイズをミリ単位で固定（!importantで強制） */
+    width: 260px !important;
+    height: 60px !important;
+    padding: 0 !important;
+    margin: 0 !important;
     
-    font-size: 1rem;
+    /* 4. フォントと角丸 */
+    font-size: 1.1rem;
     font-weight: bold;
-    border-radius: 4px;
+    border-radius: 6px;
     cursor: pointer;
-    box-sizing: border-box; /* 枠線を含めたサイズで計算 */
-    line-height: 1;       /* 行間によるズレを防止 */
+    box-sizing: border-box !important; /* 枠線を高さに含める */
 }
 
-/* 修正するボタン（左） */
+/* 左：修正ボタン */
 .btn-back {
-    background-color: #f0f0f0;
-    color: #333;
-    border: 2px solid #ccc; /* 2pxの枠線 */
+    background-color: #f0f0f0 !important;
+    color: #333 !important;
+    border: 1px solid #ccc !important;
 }
 
-/* 送信するボタン（右） */
+/* 右：送信ボタン */
 .btn-submit {
-    background-color: var(--primary-color);
-    color: #fff;
-    /* ★重要：枠線がないボタンにも「同じ太さの透明な枠線」をつけます。
-       これで左右のボタンが「1ピクセルの狂いもなく」同じサイズになります。 */
-    border: 2px solid transparent; 
+    background-color: var(--primary-color) !important;
+    color: #fff !important;
+    /* ★左の1pxの枠線と合わせるため、透明な1pxの枠線を引く */
+    border: 1px solid transparent !important;
 }
 
-.btn-back:hover { background-color: #e0e0e0; }
-.btn-submit:hover { opacity: 0.9; }
-
-/* スマホでの縦並び設定 */
+/* スマホ用設定（縦並びレイアウト） */
 @media (max-width: 768px) {
+    .confirm-item {
+        flex-direction: column; /* 項目名の下に内容を出す */
+        padding: 15px 0;
+    }
+    .confirm-item dt {
+        width: 100%;
+        color: #888;
+        font-size: 0.9rem;
+        margin-bottom: 5px;
+    }
+    .confirm-item dd {
+        font-size: 1.1rem;
+        font-weight: bold;
+    }
     .confirm-btn-group {
-        flex-direction: column;
+        flex-direction: column-reverse; /* 送信を上に */
         gap: 15px;
     }
     .btn-back, .btn-submit {
         width: 100%;
         max-width: 320px;
+        height: 56px !important; /* スマホ用高さ */
     }
 }
+
 
 /* --- 送信完了ページ (thanks.html) 専用 --- */
 .thanks-page {
