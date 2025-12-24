@@ -1454,6 +1454,42 @@ a.footer-dept-link:hover {
     margin: 0 auto;
 }
 
+/* --- お問い合わせページ 送信ボタンの中央寄せ --- */
+.form-submit {
+    text-align: center;     /* 中のボタンを中央に寄せる */
+    margin-top: 40px;       /* 上の入力項目（プライバシーポリシー）との間隔 */
+}
+
+.form-submit .btn-submit {
+    display: inline-block;  /* 中央寄せを有効にするために inline-block に変更 */
+    width: 100%;
+    max-width: 350px;       /* ボタンが広がりすぎないように制限 */
+    padding: 18px;
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.form-submit .btn-submit:hover {
+    opacity: 0.9;
+}
+
+/* スマホ用の微調整 */
+@media (max-width: 768px) {
+    .form-submit {
+        margin-top: 30px;
+    }
+    .form-submit .btn-submit {
+        width: 100%;        /* スマホでは画面幅いっぱいに（左右余白は残る） */
+        max-width: none;    /* スマホでは制限を解除 */
+    }
+}
+
 /* 任意のラベルもデザインを合わせる場合（任意） */
 .optional {
     display: inline-block;
@@ -1812,5 +1848,60 @@ main > section:last-of-type,
         width: 100%;
         max-width: 320px;
         box-sizing: border-box;
+    }
+}
+
+/* --- 体験談ページ 代表メッセージ --- */
+.representative-section {
+    padding: 60px 0 80px; /* 上下の余白 */
+    background-color: #fff; /* 背景は白にして清潔感を */
+}
+
+.representative-card {
+    background: #f0f5fa; /* ほんのり青みがかった背景色で優しさを演出 */
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+
+.representative-content {
+    margin-top: 20px;
+}
+
+
+.message-text {
+    font-size: 1.1rem;
+    line-height: 2;
+    color: #333;
+    margin-bottom: 30px;
+    /* 「」などで囲まず、自然な語りかけにするための余白 */
+}
+
+.representative-name {
+    text-align: right;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.representative-name span {
+    font-size: 1.3rem; /* お名前を少し大きく */
+    margin-left: 10px;
+}
+
+/* スマホ表示 */
+@media (max-width: 768px) {
+    .representative-card {
+        padding: 30px 20px;
+    }
+    .message-text {
+        font-size: 1rem;
+        line-height: 1.8;
+    }
+    .representative-name {
+        font-size: 1rem;
     }
 }
