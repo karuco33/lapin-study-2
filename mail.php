@@ -5,6 +5,7 @@
 
 // 1. メールの設定
 $to_email = "sk.04505sk@gmail.com"; // ★ご自身のメールアドレス
+$from_email  = "info@youji-lapin-study.com";
 $subject  = "【ラパン学習塾 幼児教室】ホームページからのお問い合わせ";
 $thanks_page = "thanks.html";
 
