@@ -3,11 +3,18 @@
  * ラパン学習塾 幼児教室 お問い合わせ処理（文字化け対策版）
  */
 
-// 1. メールの設定
-$to_email = "sk.04505sk@gmail.com"; // ★ご自身のメールアドレス
-$from_email  = "info@youji-lapin-study.com";
+// --- 1. メールの設定 ---
+
+$to_email   = "info@youji-lapin-study.com"; // ★宛先をロリポップのアドレスにする
+$from_email = "info@youji-lapin-study.com"; // ★送り主も同じにする
 $subject  = "【ラパン学習塾 幼児教室】ホームページからのお問い合わせ";
 $thanks_page = "thanks.html";
+
+// 送り主（From）の設定：ここを独自ドメインのアドレスに固定します
+$from_name = mb_encode_mimeheader("HPお問い合わせ通知", "UTF-8");
+$headers = "From: " . $from_name . " <" . $from_email . ">\r\n"; // ここが最重要
+$headers .= "Reply-To: " . $_POST['email'] . "\r\n"; // 返信先はお客様のアドレス
+$headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
 
 // 2. 日本語設定の徹底（おまじない）
 mb_language("Japanese");
