@@ -607,13 +607,16 @@ a.footer-dept-link:hover {
         width: 100%;
         height: 100vh; /* 画面の高さいっぱい */
         background-color: var(--bg-color); /* 背景色 */
+
+        margin: 0 !important;
+        padding-top: 0 !important;
         
         /* 中身を中央揃えにする設定 */
         display: flex;
         flex-direction: column; /* 中身を縦並びにする */
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
-        
+
         /* アニメーション設定 */
         opacity: 0;
         visibility: hidden;
