@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>お知らせ一覧 | ラパン学習塾幼児教室</title>
+    <title>ブログ一覧 | ラパン学習塾幼児教室</title>
     <link rel="stylesheet" href="style.css?v=1.1">
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="apple-touch-icon" href="favicon.png">
@@ -27,7 +27,7 @@
                     <li><a href="index.html">ホーム</a></li>
                     <li><a href="course.html">クラス紹介</a></li>
                     <li><a href="voice.html">体験談</a></li>
-                    <li><a href="news.html">お知らせ・ブログ</a></li>
+                    <li><a href="news.html">お知らせ・コラム</a></li>
                     <li><a href="contact.html" class="btn-contact">お問い合わせ</a></li>
                 </ul>
             </nav>
@@ -39,25 +39,29 @@
 
     <main class="news-page" style="padding-bottom: 80px;">
         <div class="page-header">
-            <h1>お知らせ・ブログ</h1>
-            <p>News & Blog</p>
+            <h1>お知らせ・コラム</h1>
+            <p>News & Column</p>
         </div>
 
         <div class="container" style="max-width: 800px; margin-top: 40px;">
             
             <div class="category-tabs">
                 <a href="news.html" class="category-tab">お知らせ</a>
-                <a href="blog.html" class="category-tab active">ブログ</a>
+                <a href="blog.html" class="category-tab active">コラム</a>
             </div>
 
-            <div style="text-align: center; padding: 100px 20px; background-color: #fff; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
-                <p style="font-size: 1.3rem; font-weight: bold; color: var(--primary-color); margin-bottom: 15px;">
-                    ブログは現在準備中です
-                </p>
-                <p style="color: #666; line-height: 1.8;">
-                    公開までもうしばらくお待ちください。
-                </p>
-            </div>
+            <!-- 準備中ボックスを削除し、ブログのリストを追加しました -->
+            <ul class="news-list">
+                <li class="news-item">
+                    <a href="blog-20260627.html" class="has-arrow">
+                        <div class="news-meta">
+                            <span class="news-date">2026.06.27</span>
+                            <span class="news-category">コラム</span>
+                        </div>
+                        <p class="news-title">コラム No.1：代表の挨拶と想い</p>
+                    </a>
+                </li>
+            </ul>
 
         </div>
     </main>
